@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../Styles/home.css'; 
 
 const Home = () => {
   const [formData, setFormData] = useState({
     name: '',
-    domain: '',
     gender: '',
-    phone: '',
+    nationality: '',
     email: '',
-    links: '',
+    phone: '',
+    address: '',
     message: '',
   });
 
@@ -20,18 +21,22 @@ const Home = () => {
     e.preventDefault();
 
     try {
-      // Make a POST request to your backend API to submit the form data
-    //   await axios.post('/api/submit', formData);
+      const response = await axios.post('http://localhost:8000/survey-data', formData, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
       alert('Form submitted successfully!');
+      console.log('Form submitted successfully', response.data);
 
-        // reset the form
+      // reset the form
       setFormData({
         name: '',
-        domain: '',
         gender: '',
-        phone: '',
+        nationality: '',
         email: '',
-        links: '',
+        phone: '',
+        address: '',
         message: '',
       });
     } catch (error) {
@@ -72,14 +77,14 @@ const Home = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="domain">Domain:</label>
+          <label htmlFor="nationality">Nationality:</label>
           <input
             type="text"
-            id="domain"
-            name="domain"
-            value={formData.domain}
+            id="nationality"
+            name="nationality"
+            value={formData.nationality}
             onChange={handleChange}
-            placeholder='Frontend Developer, DevOps Engineer etc.'
+            placeholder='Indian, American etc.'
             required
           />
         </div>
@@ -110,18 +115,18 @@ const Home = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="links">Project Links:</label>
+          <label htmlFor="address">Address:</label>
           <textarea
-            id="links"
-            name="links"
-            value={formData.links}
+            id="address"
+            name="address"
+            value={formData.address}
             onChange={handleChange}
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="message">Why do you want to work with us?</label>
+          <label htmlFor="message">Message:</label>
           <textarea
             id="message"
             name="message"

@@ -1,0 +1,50 @@
+  .submission-list-container {
+    width: max-content;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .submission-list-container h2 {
+    color: rgb(65, 60, 60);
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  td {
+    color: rgb(65, 60, 60);
+  }
+  
+  th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  @media (max-width: 600px) {
+    .submission-list-container {
+      max-width: 100%;
+    }
+  }
+  
