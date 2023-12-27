@@ -12,7 +12,7 @@ const SubmittedData = () => {
     // hit the get api to fetch submitted forms data
     const fetchSubmissions = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/get-submissions');
+        const response = await axios.get('https://evo-survey-website.onrender.com/get-submissions');
         console.log(response);
         setSubmissions(response.data);
       } catch (error) {

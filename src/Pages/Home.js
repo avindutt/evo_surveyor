@@ -22,7 +22,7 @@ const Home = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/survey-data', formData, {
+      const response = await axios.post('https://evo-survey-website.onrender.com/survey-data', formData, {
         headers: {
           "Content-Type": "application/json"
         }

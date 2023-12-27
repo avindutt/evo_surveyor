@@ -25,7 +25,7 @@ const Register = () => {
         return;
       }
 
-      const response = await axios.post('http://localhost:8000/user/register', { username, password, email }, {
+      const response = await axios.post('https://evo-survey-website.onrender.com/user/register', { username, password, email }, {
         headers: {
             "Content-Type": 'application/json',
         }
