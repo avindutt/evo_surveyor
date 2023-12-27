@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../Styles/home.css'; 
+import { toast } from 'react-toastify';
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,10 @@ const Home = () => {
           "Content-Type": "application/json"
         }
       });
-      alert('Form submitted successfully!');
+      toast.success('Form submitted successfully!', {
+        autoClose: 3000,
+        pauseOnHover: true
+      });
       console.log('Form submitted successfully', response.data);
 
       // reset the form
@@ -40,6 +44,10 @@ const Home = () => {
         message: '',
       });
     } catch (error) {
+      toast.error('Error in submitting form!', {
+        autoClose: 3000,
+        pauseOnHover: true
+      });
       console.error('Error submitting form:', error);
     }
   };

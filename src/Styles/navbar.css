@@ -2,7 +2,9 @@
     background-color: #3498db;
     color: #fff;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(82, 78, 78, 0.988);
+    margin-bottom: 10px;
+    height: 28px;
   }
   
   .navbar-container {
@@ -19,6 +21,8 @@
   }
   
   .nav-link:hover {
-    text-decoration: underline;
+    color: rgb(56, 55, 55);
+    transition: all 0.2s ease-in;
+    font-size: 20px;
   }
   

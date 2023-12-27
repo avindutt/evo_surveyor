@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import AdminLogin from './Pages/AdminLogin';
 import SubmittedData from './Pages/SubmittedData';
 import Navbar from './Components/Navbar';
+import Register from './Pages/Register';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/login' element={<AdminLogin/>}></Route>
         <Route path='/view-data' element={<SubmittedData/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
       </Routes>
     </div>
   )

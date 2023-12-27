@@ -4,11 +4,16 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.525);
     background-color: #fff;
   }
 
   .submission-list-container h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: max-content;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: 1px dotted rgb(172, 171, 171);
     color: rgb(65, 60, 60);
     text-align: center;
   }
@@ -20,7 +25,7 @@
   }
   
   th, td {
-    border: 1px solid #ddd;
+    border: 1px dotted #d5d4d4;
     padding: 8px;
     text-align: left;
   }
