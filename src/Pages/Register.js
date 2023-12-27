@@ -11,6 +11,8 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [registrationMessage, setRegistrationMessage] = useState('');
   const navigate = useNavigate();
+
+  
   const handleRegister = async () => {
     try {
 

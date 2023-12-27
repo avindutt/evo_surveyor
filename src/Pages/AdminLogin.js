@@ -1,12 +1,37 @@
 import React, { useState } from 'react';
 import '../Styles/login.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // Implement admin login logic
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/user/create-session', {
+        email, 
+        password
+      });
+
+      console.log('*********', response)
+
+      toast.success('Login Successful', {
+        autoClose: 3000,
+        pauseOnHover: true
+      });
+
+      navigate('/view-data');
+      
+    } catch (error) {
+      toast.error('Login Failed, Try Again!', {
+        autoClose: 3000,
+        pauseOnHover: true
+      })
+      console.log('Login failed', error);
+    }
   };
 
   return (
@@ -15,13 +40,13 @@ const AdminLogin = () => {
       <h2>Admin Login</h2>
       <form>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
